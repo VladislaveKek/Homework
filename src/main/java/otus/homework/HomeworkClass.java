@@ -23,6 +23,8 @@ public class HomeworkClass {
             compareNumbers(); }
         if (menu == 5) {
             addOrSubtractAndPrint(); }
+        else {while (menu < 1 && menu > 5) {greetings();}
+        }
     }
     public static void greetings() {
         System.out.println("Кто ты?");
@@ -33,18 +35,16 @@ public class HomeworkClass {
         Scanner scanner = new Scanner(System.in);
         int character = scanner.nextInt();
         if (character == 1) {
-            System.out.println("ЗА ГОРКА!");
-        } if (character == 2) {
-            System.out.println("ЗА МОРКА!");
-        } if (character == 3) {
-            System.out.println("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGH");
-        } if (character == 4) {
-            System.out.println("Бей его ребята!");
-        } if {
-            System.out.println("Попробуй еще раз");
-        }
+            System.out.println("ЗА ГОРКА!"); }
+        if (character == 2) {
+            System.out.println("ЗА МОРКА!"); }
+        if (character == 3) {
+            System.out.println("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGH");}
+        if (character == 4) {
+            System.out.println("Бей его ребята!"); }
+        else  {
+            System.out.println("you died"); }
     }
-
     public static void checkSign() {
         System.out.println("Сколько у тебя очков силы?");
         Scanner scanner = new Scanner(System.in);
@@ -57,27 +57,21 @@ public class HomeworkClass {
         System.out.print("Твой рейтинг в орде = ");
         System.out.println(result);
         if (result >= 0) {
-            System.out.println("Ты настоящий орк!");
-        }
+            System.out.println("Ты настоящий орк!"); }
         if (result < 0) {
-            System.out.println("Человечешка! Бей его ребята!");
-        }
+            System.out.println("Человечешка! Бей его ребята!"); }
     }
-
     public static void selectorColor() {
         int enemies = (int) (Math.random() * 100);
         System.out.print("Ты победил ");
         System.out.print(enemies);
         System.out.println(" человешек!");
         if (enemies <= 30) {
-            System.out.println("Это мало");
-        }
+            System.out.println("Это мало"); }
         if (enemies > 30 && enemies <= 60) {
-            System.out.println("Это средне");
-        }
+            System.out.println("Это средне"); }
         if (enemies > 60) {
-            System.out.println("Это много!");
-        }
+            System.out.println("Это много!"); }
     }
     public static void compareNumbers() {
 
