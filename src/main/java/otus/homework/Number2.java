@@ -114,12 +114,10 @@ public class Number2 {
     // здесь начинается второй метод
     public static void theSecondExercise(int[] massiveTheSecond) {
         int sum = 0;
-        int mus;
         int cal = 0;
         for (int i = 0; i < massiveTheSecond.length; i++) {
             if (massiveTheSecond[i] >= 5) {
-                mus = massiveTheSecond[i];
-                sum = mus + sum;
+                sum += massiveTheSecond[i];
                 cal++;
             }
         }
@@ -139,7 +137,7 @@ public class Number2 {
     // здесь начинется четвертый метод
     public static void theFourthExercise(int a4, int[] massiveTheFourth) {
         for (int i = 0; i < massiveTheFourth.length; i++) {
-            massiveTheFourth[i] = massiveTheFourth[i] + a4;
+            massiveTheFourth[i] += a4;
         }
         System.out.println(Arrays.toString(massiveTheFourth));
     }
@@ -165,13 +163,24 @@ public class Number2 {
 
     // здесь одно задание со звездочкой
     public static void starExercise(int[] massiveStar1, float[] massiveStar2) {
-        float[] sumStarMassive = new float[3];
-        for (int i = 0; i < sumStarMassive.length; i++) {
-            if (sumStarMassive[i] == 0) {
-                sumStarMassive[i] = massiveStar1[i] + massiveStar2[i];
+        if (massiveStar1.length >= massiveStar2.length) {
+            float[] sumStarMassive = new float[massiveStar2.length];
+            for (int i = 0; i < sumStarMassive.length; i++) {
+                if (sumStarMassive[i] == 0) {
+                    sumStarMassive[i] = massiveStar1[i] + massiveStar2[i];
+                }
             }
+            System.out.println("\nЗначения третьего массива равны сумме значений из двух предыдущих\n" +
+                    Arrays.toString(sumStarMassive));
+        } else {
+            float[] sumStarMassive = new float[massiveStar1.length];
+            for (int j = 0; j < sumStarMassive.length; j++) {
+                if (sumStarMassive[j] == 0) {
+                    sumStarMassive[j] = massiveStar2[j] + massiveStar1[j];
+                }
+            }
+            System.out.println("\nЗначения третьего массива равны сумме значений из двух предыдущих\n" +
+                    Arrays.toString(sumStarMassive));
         }
-        System.out.println("\nЗначения третьего массива равны сумме значений из двух предыдущих\n" +
-                Arrays.toString(sumStarMassive));
     }
 }
