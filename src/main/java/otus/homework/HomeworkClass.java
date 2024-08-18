@@ -1,16 +1,35 @@
 package otus.homework;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class HomeworkClass {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Какую часть задания запустить?\n" +
+                "1. Сложить положительные элементы массива\n" +
+                "2. Построить квадрат в соответствии с размером массива\n" +
+                "3. Зануление диагонали\n" +
+                "4. Возвращение высшего элемента массива\n" +
+                "5. Сумма элементов второй строки массива или -1");
+
+        int menu = scanner.nextInt();
+        if (menu == 1) {
+            preOneQuest();
+        } else if (menu == 2) {
+            preTwoQuest();
+        } else if (menu == 3) {
+            preThreeQuest();
+        }
+    }
+
+    //здесь начинается заполнение аргементов для первого квеста
+    public static void preOneQuest() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("\n" +
                 "Какого размера ваш двумерный массив?\n" +
                 "Введите кол-во строк");
-
+        // здесь начинается проверка на дурака
         while (!scanner.hasNextInt()) {
             System.out.println("Введи целое число");
             scanner.next();
@@ -102,5 +121,86 @@ public class HomeworkClass {
         }
         System.out.println("\n" +
                 "Сумма положительных чисел в массиве = " + sum);
+
+    }
+
+    //здесь начинается заполнение аргументов для второго квеста
+    public static void preTwoQuest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n" +
+                "Какого размера ваш квадрат?");
+        // здесь начинается проверка на дурака
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введи целое число");
+            scanner.next();
+        }
+        int size1 = scanner.nextInt();
+
+        char[][] quadrat = new char[size1][size1];
+
+        for (int i = 0; i < quadrat.length; i++) {
+            quadrat[i][0] = '*';
+            quadrat[i][quadrat.length - 1] = '*';
+            quadrat[0][i] = '*';
+            quadrat[quadrat.length - 1][i] = '*';
+
+        }
+        for (int i = 0; i < quadrat.length; i++) {
+            for (int j = 0; j < quadrat[i].length; j++) {
+                System.out.print(quadrat[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    //здесь начинается заполнение аргументов для третьего квеста
+    public static void preThreeQuest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n" +
+                "Какого размера ваш массив?");
+        // здесь начинается проверка на дурака
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введи целое число");
+            scanner.next();
+        }
+        int size1 = scanner.nextInt();
+
+        char[][] massiveX2URL = new char[size1][size1];
+        for (int i = 0; i < massiveX2URL.length; i++) {
+            for (int j = 0; j < massiveX2URL[i].length; j++) {
+                System.out.print(massiveX2URL[i][j] + " ");
+            }
+            System.out.println();
+        }
+        threeQuest(massiveX2URL);
+    }
+
+    public static void threeQuest(char[][] massiveX2) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Как провести диагональ?\n" +
+                "1. Слева направо\n" +
+                "2. Справа налево");
+        int menu = scanner.nextInt();
+        if (menu == 1) {
+            for (int i = 0; i < massiveX2.length; i++) {
+                massiveX2[i][i] = '0';
+            }
+            for (int i = 0; i < massiveX2.length; i++) {
+                for (int j = 0; j < massiveX2[i].length; j++) {
+                    System.out.print(massiveX2[i][j] + " ");
+                }
+                System.out.println();
+            }
+        } else if (menu == 2) {
+            for (int i = 0; i < massiveX2.length; i++) {
+                massiveX2[i][massiveX2.length-1-i] = '0';
+            }
+            for (int i = 0; i < massiveX2.length; i++) {
+                for (int j = 0; j < massiveX2[i].length; j++) {
+                    System.out.print(massiveX2[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
     }
 }
