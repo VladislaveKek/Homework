@@ -20,7 +20,7 @@ public class HomeworkClass {
             }
         }
         // Последняя часть квеста
-        Korobka korobka1 = new Korobka("желтый", 3, "закрыта", "мяч");
+        Korobka korobka1 = new Korobka("желтый", 3, false, "мяч");
         System.out.println("- - - - -");
         korobka1.info();
 
@@ -31,7 +31,7 @@ public class HomeworkClass {
         korobka1.changePredmet("копье");
 
         System.out.println("- - - - -");
-        korobka1.openKorobka();
+        korobka1.open();
         korobka1.changePredmet("копье");
 
         System.out.println("- - - - -");
